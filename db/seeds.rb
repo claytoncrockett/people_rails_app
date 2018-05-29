@@ -19,10 +19,12 @@
 
   )
 
-  3.times do
-    person.pets.create(
-      name: Faker::Name.unique.name,
-      animal: ["Dog", "Cat", "Monkey"].sample
-    )
+  if person.alive
+    3.times do
+      person.pets.create(
+        name: Faker::Name.unique.name,
+        animal: ["Dog", "Cat", "Monkey", "Lizard", "Snake", "Ferrett", "Squirrel", "Turtle", "Hamster", "Bear", "Rat", "Tamagotchi"].sample
+      )
+    end
   end
 end

@@ -1,10 +1,12 @@
 class PeopleController < ApplicationController
   def index
     @people = Person.all
+    @pets = Pet.all
   end
 
   def show
     @person = Person.find(params[:id])
+    @pet = Pet.where("person_id = #{@person.id}")
   end
 
   def new
@@ -46,4 +48,6 @@ class PeopleController < ApplicationController
     params.require(:person).permit(:name, :age, :eye_color, :hair_color, :alive, :catchphrase, :gender)
   end
 
+
+ 
 end

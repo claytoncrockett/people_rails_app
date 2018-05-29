@@ -5,4 +5,9 @@
 <p>Gender: <%= @person.gender %></p>
 <p>Alive: <%= @person.alive %></p>
 <p>Catchphrase: <%= @person.catchphrase %></p>
+<p>Pets: <br />
+<% @pet.each do |pet| %>
+ Name: <%= pet.name %>
+ Animal: <%= pet.animal %></p>
+<% end %>
 <%= link_to 'Back', people_path %>
