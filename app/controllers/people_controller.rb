@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all
-    @pets = Pet.all
+    @people = Person.order("name")
+    @pets = Pet.order("name")
   end
 
   def show
